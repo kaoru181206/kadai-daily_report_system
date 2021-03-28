@@ -3,21 +3,21 @@
 <c:if test="${errors != null }">
     <div id="flush_error">
         入力内容にエラーがあります。<br/>
-        <c:forEach var="error" items="${errors }">
-            ・<c:out value="${error }"/><br/>
+        <c:forEach var="error" items="${errors}">
+            ・<c:out value="${error}"/><br/>
         </c:forEach>
     </div>
 </c:if>
 <label for="code">社員番号</label><br/>
-<input type="text" name="code" value="${employee.code }"/>
+<input type="text" name="code" value="${employee.code}"/>
 <br><br/>
 
 <label for="name">氏名</label><br/>
-<input type="text" name="name" value="${employee.name }"/>
+<input type="text" name="name" value="${employee.name}"/>
 <br><br/>
 
 <label for="password">パスワード</label><br/>
-<input type="text" name="password" value="${employee.password }"/>
+<input type="text" name="password" value="${employee.password}"/>
 <br><br/>
 
 <label for="admin_flag">権限</label><br/>
@@ -27,5 +27,5 @@
 </select>
 <br><br/>
 
-<input type="hidden" name="_token" value="${_token }"/>
+<input type="hidden" name="_token" value="${_token}"/>
 <button type="submit">投稿</button>
