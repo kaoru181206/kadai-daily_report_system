@@ -15,20 +15,19 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
-@Table(name="reports")
+@Table(name = "reports")
 @NamedQueries({
     @NamedQuery(
-            name="getAllreports",
-            query="SELECT r FROM Report AS r ORDER BY r.id DESC"
+        name = "getAllReports",
+        query = "SELECT r FROM Report AS r ORDER BY r.id DESC"
     ),
     @NamedQuery(
-            name="getReportsCount",
-            query="SELECT COUNT(r) FROM Report AS r"
+        name = "getReportsCount",
+        query = "SELECT COUNT(r) FROM Report AS r"
     ),
 })
 @Entity
 public class Report {
-
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -109,5 +108,4 @@ public class Report {
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
-
 }
