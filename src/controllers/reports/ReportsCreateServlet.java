@@ -57,6 +57,10 @@ public class ReportsCreateServlet extends HttpServlet {
             r.setTitle(request.getParameter("title"));
             r.setContent(request.getParameter("content"));
 
+
+            //いいね数に初期値０を設定
+            r.setLikes(0);
+
             Timestamp currentTime=new Timestamp(System.currentTimeMillis());
             r.setCreated_at(currentTime);
             r.setUpdated_at(currentTime);

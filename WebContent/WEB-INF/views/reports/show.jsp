@@ -30,6 +30,10 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>いいね数</th>
+                            <td><c:out value="${report.likes }"/></td>
+                        </tr>
+                        <tr>
                             <th>更新日時</th>
                             <td>
                                 <fmt:formatDate value="${report.updated_at }" pattern="yyyy-MM-dd HH:mm:ss"/>
@@ -38,6 +42,14 @@
 
                     </tbody>
                 </table>
+                <br/>
+                <!-- いいねボタンを追加 -->
+                <c:if test="${sessionScope.login_employee.id != report.employee.id}">
+                    <form method="POST" action="<c:url value='/likes/create'/>">
+                        <button type="submit" name="likes" value="${1 }">いいね！</button>
+
+                    </form>
+                </c:if>
 
 
                 <c:if test="${sessionScope.login_employee.id==report.employee.id }">

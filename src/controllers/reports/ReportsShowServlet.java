@@ -40,6 +40,10 @@ public class ReportsShowServlet extends HttpServlet {
 
         request.setAttribute("report", r);
         request.setAttribute("_token", request.getSession().getId());
+        //セッションスコープにレポートのIDをセット
+        request.getSession().setAttribute("report_id", r.getId());
+        //確認
+        System.out.println("セッション中のreport_id"+request.getSession().getAttribute("report_id"));
 
         RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/views/reports/show.jsp");
         rd.forward(request, response);
